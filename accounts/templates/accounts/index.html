@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate invitation</title>
+</head>
+<body>
+    <h1>Send Email to candidate</h1>
+    <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" name="Submit" class="btn btn-primary ">
+
+        </form>
+</body>
+</html>
