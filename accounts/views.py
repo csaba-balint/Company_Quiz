@@ -21,7 +21,6 @@ def registerPage(request):
                 name=user.username,
             )
             messages.success(request, 'Account was created for ' + username)
-            # return render(request, 'accounts/login.html', context)
 
     context = {'form': form}
     return render(request, 'accounts/register.html', context)
@@ -118,9 +117,8 @@ def invite(request, pk):
             print(company.user)
             token = Token.objects.get(user=company.user)
             print(token)
-            send_mail('Hello!!!', 'The login token is the following: \n' + base_url + str('candidateLogin/') + str(pk) + str('/') + str(token) , 'sacal.beata@gmail.com',
+            send_mail('Hello!!!', 'The login URL is the following: \n' + base_url + str('candidateLogin/') + str(pk) + str('/') + str(token), 'myinterview.sample@gmail.com',
             [account.email], fail_silently=False)
 
     context = {'form': form}
     return render(request, 'accounts/index.html', context)
-
